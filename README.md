@@ -1,129 +1,124 @@
 # Elite Life Coach Skill
 
-综合全球顶级教练（戈德史密斯、伯查德、坎贝尔、罗宾斯、夏玛）+ ICF标准的顶级Life Coach skill。
+An elite life coach skill synthesizing methodologies from the world's top coaches (Goldsmith, Burchard, Campbell, Robbins, Sharma) + ICF standards.
 
-## ✨ 特点
+## ✨ Features
 
-- **科学基础**：基于行为心理学、神经科学、高管领导力实战
-- **去宗教化**：专注实战落地，不靠励志鸡汤
-- **系统化框架**：7个核心心智模型 + 10条决策启发式
-- **ICF标准**：符合国际教练联合会标准的5阶段会话流程
+- **Scientific Foundation**: Based on behavioral psychology, neuroscience, and executive leadership practice
+- **Secular Approach**: Focus on practical implementation, not motivational speeches
+- **Systematic Framework**: 7 core mental models + 10 decision heuristics
+- **ICF Standards**: Compliant with International Coach Federation's 5-stage session flow
 
-## 🎯 适用场景
+## 🎯 Best Use Cases
 
-- ✅ 职业发展：迷茫、方向选择、领导力提升
-- ✅ 个人成长：习惯养成、绩效提升、状态管理
-- ✅ 人际关系：沟通问题、团队冲突、信任建立
-- ✅ 创业/商业：创业者支持、决策困境、团队建设
+- ✅ **Career Development**: Confusion, direction selection, leadership enhancement
+- ✅ **Personal Growth**: Habit formation, performance improvement, state management
+- ✅ **Relationships**: Communication issues, team conflicts, trust building
+- ✅ **Entrepreneurship/Business**: Entrepreneur support, decision dilemmas, team building
 
-## 📦 安装
+## 📦 Installation
 
 ### Claude Code
 
 ```bash
-# 克隆仓库
-git clone https://github.com/YOUR_USERNAME/life-coach.git
+# Clone repository
+git clone https://github.com/dexterqiu-collab/life-coach.git
 cd life-coach
 
-# 复制skill到Claude Code目录
+# Copy skill to Claude Code directory
 cp SKILL.md ~/.claude/skills/life-coach.md
 ```
 
 ### OpenClaw
 
 ```bash
-# 克隆仓库
-git clone https://github.com/YOUR_USERNAME/life-coach.git
+# Clone repository
+git clone https://github.com/dexterqiu-collab/life-coach.git
 cd life-coach
 
-# 复制skill到OpenClaw目录
+# Copy skill to OpenClaw directory
 cp SKILL.md ~/.openclaw/skills/life-coach.md
 ```
 
-## 🚀 使用
+## 🚀 Usage
 
-**触发词**：
+**Trigger words**:
 - `life coach`
-- `人生教练`
-- `高管教练`
-- `职业咨询`
-- `突破困境`
-- `提升绩效`
+- `executive coach`
+- `career consultation`
+- `breakthrough`
+- `performance enhancement`
 
-**示例对话**：
+**Sample conversation**:
 ```
-你：life coach，我最近在工作上感到很迷茫
+You: life coach, I've been feeling lost in my work lately
 
-教练：我听到你提到在工作中感到迷茫。能多跟我说说这对你意味着什么吗？
-     你现在面临的具体挑战是什么？
+Coach: I hear you mentioning feeling lost at work. Can you tell me more about what this means to you?
+      What specific challenges are you facing now?
 ```
 
-## 🧠 核心心智模型
+## 🧠 Core Mental Models
 
-1. **前馈式成长思维** - 关注未来如何改进，而非过去哪里错了
-2. **状态-行动闭环** - 改变生理状态立即改变行为表现
-3. **信任-坦诚-人文三角** - 没有信任就无法解决真问题
-4. **黄金时间护城河** - 保护深度工作时间，建立竞争优势
-5. **限制性信念识别** - 阻碍你的是信念，不是现实
-6. **5阶段转化框架** - 连接→探索→洞察→行动→收尾
-7. **刻意练习系统** - 高绩效来自系统化训练
+1. **Feedforward Growth Mindset** - Focus on how to improve in the future, not what went wrong in the past
+2. **State-Action Loop** - Change physiological state to immediately change behavioral performance
+3. **Trust-Candor-Humanity Triangle** - Real problems cannot be solved without trust
+4. **Golden Hour Moat** - Protect deep work time to build competitive advantages
+5. **Limiting Belief Identification** - What holds you back are beliefs, not reality
+6. **5-Stage Transformation Framework** - Connect → Explore → Insight → Action → Close
+7. **Deliberate Practice System** - High performance comes from systematic training
 
-## 📚 方法论来源
+## 📚 Methodology Sources
 
-基于5位世界级教练的精华：
+Based on the essence of 5 world-class coaches:
 
-- **马歇尔·戈德史密斯** - 高管领导力与行为改变（前馈法、360度反馈）
-- **布兰登·伯查德** - 高绩效与习惯养成（能量生成、刻意练习）
-- **比尔·坎贝尔** - 硅谷团队教练（极致坦诚、以人为本）
-- **托尼·罗宾斯** - 潜能开发（NLP、状态管理、限制性信念）
-- **罗宾·夏玛** - 个人精进与作息管理（晨间纪律、黄金时间）
+- **Marshall Goldsmith** - Executive leadership and behavioral change (feedforward, 360-degree feedback)
+- **Brendon Burchard** - High performance and habit formation (energy generation, deliberate practice)
+- **Bill Campbell** - Silicon Valley team coach (radical candor, people-centric)
+- **Tony Robbins** - Potential development (NLP, state management, limiting beliefs)
+- **Robin Sharma** - Personal excellence and routine management (morning discipline, golden time)
 
-结合 **ICF（国际教练联合会）** 标准框架。
+Combined with **ICF (International Coach Federation)** standard framework.
 
-## ⚠️ 重要提示
+## ⚠️ Important Notes
 
-**这不是**：
-- ❌ 心理治疗（创伤处理需要专业心理治疗师）
-- ❌ 咨询顾问（不给具体答案，帮助找到自己的答案）
-- ❌ 励志演讲（基于科学框架，不只是打鸡血）
+**This is NOT**:
+- ❌ Psychotherapy (trauma processing requires professional psychotherapists)
+- ❌ Consulting (doesn't give specific answers, helps find your own answers)
+- ❌ Motivational speech (based on scientific frameworks, not just hype)
 
-**这是**：
-- ✅ 基于科学研究和商业实战
-- ✅ 去宗教化、专注落地
-- ✅ 系统化的成长方法论
+**This IS**:
+- ✅ Based on scientific research and business practice
+- ✅ Secular, focus on practical implementation
+- ✅ Systematic growth methodology
 
-## 📖 文档结构
+## 📖 Documentation Structure
 
 ```
 life-coach/
-├── README.md                      # 本文件
-├── SKILL.md                       # 核心skill文件（直接使用）
-├── phase2-synthesis.md            # 框架提炼记录
-├── phase4-validation.md           # 质量验证报告
+├── README.md                      # This file
+├── SKILL.md                       # Core skill file (direct use)
+├── phase2-synthesis.md            # Framework extraction record
+├── phase4-validation.md           # Quality validation report
 └── references/
-    └── research/                  # 6个维度的调研资料
-        ├── 01-writings.md         # 系统理论框架
-        ├── 02-conversations.md    # 对话与咨询案例
-        ├── 03-expression.md       # 表达方式与风格DNA
-        ├── 04-external.md         # 外部视角与验证
-        ├── 05-decisions.md        # 决策框架与行动指南
-        └── 06-timeline.md         # 方法论发展历程
+    └── research/                  # Research materials across 6 dimensions
+        ├── 01-writings.md         # Systematic theory frameworks
+        ├── 02-conversations.md    # Conversations and consultation cases
+        ├── 03-expression.md       # Expression style and DNA
+        ├── 04-external.md         # External perspectives and validation
+        ├── 05-decisions.md        # Decision frameworks and action guides
+        └── 06-timeline.md         # Methodology development history
 ```
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交Issue和Pull Request！
+Issues and Pull Requests are welcome!
 
-## 📄 许可证
+## 📄 License
 
 MIT License
 
-## 🙏 致谢
-
-基于[女娲·Skill造人术](https://github.com/alchaincyf/nuwa-skill)方法论创建。
-
 ---
 
-**质量评分**：92/100
+**Quality Score**: 92/100
 
-创建时间：2025-04-09
+**Created**: 2025-04-09
