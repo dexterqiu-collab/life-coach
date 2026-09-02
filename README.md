@@ -1,8 +1,8 @@
-# 清醒职业教练 Career Coach
+# 精英职业教练 Elite Career Coach
 
-一个可移植、可审计、可直接安装的职业教练智能体，面向职业方向、转型、晋升、求职与 Offer 决策、领导力、工作倦怠和长期职业资本建设。
+一个可移植、可审计、可直接安装的职业教练智能体，基于 Dexter 的 `elite-life-coach` 综合系统重构，面向职业方向、转型、晋升、求职与 Offer 决策、领导力、工作倦怠、高绩效行为改变和长期职业资本建设。
 
-它不靠鸡血，也不会只用问题把决定重新推给你。它会区分事实、判断和未知信息，在需要时给出明确建议，再把大决定缩小成可验证、可回退的下一步。
+它保留原系统的五位教练方法论、七个核心模型、五阶段会谈、表达 DNA、行动问责和安全边界，同时加入职业决策、事实核验与可逆实验。它不靠鸡血，也不会只用问题把决定重新推给你。
 
 ## 复制一个链接，交给智能体安装
 
@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/dexterqiu-collab/life-coach/main/INSTALL.md
 | Codex | [直接安装 Skill](https://github.com/dexterqiu-collab/life-coach/tree/main/skills/career-coach) | 用户级 `career-coach` Skill，可自动触发或用 `$career-coach` 调用 |
 | WorkBuddy | 将上面的 `INSTALL.md` 链接发给 WorkBuddy；也可下载 Release 中的 `career-coach-workbuddy-skill.zip` | 用户级 Skill |
 | WorkBuddy / CodeBuddy 独立智能体 | 下载 Release 中的 `career-coach-workbuddy-agent.zip` | 可在 Agent/专家列表中选择的职业教练角色，同时携带 Skill |
-| 豆包 | 打开 [豆包系统提示词](https://raw.githubusercontent.com/dexterqiu-collab/life-coach/main/platforms/doubao/SYSTEM_PROMPT.md)，全选复制到“创建智能体 → 设定描述” | 独立职业教练智能体 |
+| 豆包 | 打开 [豆包系统提示词](https://raw.githubusercontent.com/dexterqiu-collab/life-coach/main/platforms/doubao/SYSTEM_PROMPT.md)，全选复制到“创建智能体 → 设定描述” | 独立“精英职业教练”智能体 |
 | 其他支持 Agent Skills 的工具 | 导入 [`skills/career-coach`](skills/career-coach) | 标准 `SKILL.md` 能力包 |
 
 > 豆包目前没有通用的 GitHub `SKILL.md` 链接安装协议，因此无法诚实地承诺“粘贴 URL 后自动创建另一个智能体”。仓库已经把豆包版压成单文件系统提示词，实际操作只需创建智能体并粘贴一次。
@@ -56,6 +56,20 @@ powershell -ExecutionPolicy Bypass -File scripts/install.ps1 -Target auto
 - 建立每周复盘与问责机制，让行动持续发生
 - 当薪酬、行业或公司事实会改变建议时，先研究再判断
 
+## 方法论系统
+
+系统综合了马歇尔·戈德史密斯、布兰登·伯查德、比尔·坎贝尔、托尼·罗宾斯、罗宾·夏玛的方法论，以及 ICF 风格的伦理、倾听、觉察、行动与问责原则。运行时按场景选择最相关的模型：
+
+1. 前馈式成长
+2. 状态—行动闭环
+3. 信任—坦诚—人文三角
+4. 专注时间护城河
+5. 信念—证据区分
+6. 五阶段转化流程
+7. 刻意练习与问责
+
+这些是经过整理的实用视角，不代表 ICF 认证、任何人物背书或普遍科学定律。智能体会明确方法局限，不把真实约束粗暴归因于“心态”。
+
 ## 试用提示词
 
 ```text
@@ -89,6 +103,7 @@ life-coach/
 ## 设计原则
 
 - **建议与提问并重**：用户要判断时给判断，不把所有责任伪装成“教练式提问”。
+- **原系统完整迁移**：保留七个模型、五阶段流程、直接而温暖的表达与行动问责。
 - **事实与假设分离**：对时效信息优先研究；无法研究时明确标出假设。
 - **小实验优先**：高不确定且可逆的职业问题，优先用真实行动获取信息。
 - **渐进式加载**：核心 Skill 保持精简，只按场景读取相关框架与模板。

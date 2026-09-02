@@ -1,4 +1,4 @@
-# Career decision frameworks
+# Career and behavior-change decision frameworks
 
 Read only the sections relevant to the current request. These are decision aids, not scoring rituals.
 
@@ -14,7 +14,19 @@ Map five assets before recommending a major move:
 
 Find the asset that is both weak and pivotal. Improving that asset may be safer than changing jobs immediately.
 
-## 2. Define the real decision
+## 2. Stop-doing and feedforward audit
+
+Before adding a new habit, course, or responsibility, check whether one repeated behavior is already subtracting from trust or performance.
+
+1. Define the outcome to improve.
+2. Identify one observable behavior to stop, reduce, or replace.
+3. Ask relevant people for future-focused suggestions: “为了让我在下一次更有效，你建议我改变哪一两件事？”
+4. Listen without defending or debating; clarify only enough to understand the suggestion.
+5. Choose one behavior, practice it, and ask the same people what they observe after an agreed period.
+
+Use multi-rater feedback only with a clear purpose, appropriate consent, confidentiality, and a safe process. Feedback is data, not a verdict. Do not use feedforward to bypass investigation or accountability where past harm matters.
+
+## 3. Define the real decision
 
 Rewrite vague questions into a decision sentence:
 
@@ -28,7 +40,7 @@ Then ask:
 - Is this a one-way door or a two-way door?
 - Which uncertainty, if resolved, would most change the choice?
 
-## 3. Option scorecard
+## 4. Option scorecard
 
 Use a scorecard only when there are several concrete options. Agree on criteria before scoring.
 
@@ -49,7 +61,7 @@ Use weights only for priorities the user has explicitly ranked. A weighted total
 - the largest uncertainty;
 - the evidence that would reverse it.
 
-## 4. Push, pull, and bridge for transitions
+## 5. Push, pull, and bridge for transitions
 
 Separate three forces:
 
@@ -59,7 +71,20 @@ Separate three forces:
 
 Strong push with weak pull often calls for recovery or a better local environment before a full career switch. Strong pull with a missing bridge calls for an experiment and capability plan.
 
-## 5. Reversible career experiment
+## 6. State, system, or skill diagnosis
+
+Before prescribing motivation or a career change, locate the main bottleneck:
+
+| Bottleneck | Evidence | Proportionate response |
+|---|---|---|
+| State | Acute fatigue, anxiety, or transition friction varies by moment | Safe reset, smaller start, recovery, or change of setting |
+| System | Chronic overload, unclear priorities, weak incentives, interruptions, unsafe culture | Negotiate, redesign workflow, escalate safely, or change environment |
+| Skill | A specific capability repeatedly limits results despite opportunity and energy | Deliberate practice with feedback |
+| Evidence | The user cannot tell whether the target path fits | Reversible career experiment |
+
+Several bottlenecks may coexist. Persistent symptoms or unsafe conditions should not be reframed as a discipline problem.
+
+## 7. Reversible career experiment
 
 A useful experiment tests one important assumption without pretending to simulate the entire career.
 
@@ -75,7 +100,34 @@ Cost cap: [time, money, reputation, or energy limit].
 
 Prefer contact with the real work over more abstract reflection.
 
-## 6. Promotion evidence map
+## 8. Protected-focus investment
+
+Use this when the user knows which capability or evidence asset matters but never creates space for it.
+
+1. Choose one pivotal asset: skill, portfolio evidence, relationship, or strategic project.
+2. Find the user's real high-energy window; do not assume morning.
+3. Protect a repeatable block and remove one predictable interruption.
+4. Define the visible output of each block.
+5. Review after two weeks: output created, energy cost, interruption pattern, and necessary redesign.
+
+Protected time should create career capital, not become another perfectionist ritual.
+
+## 9. Deliberate-practice loop
+
+```text
+Target capability: [specific subskill or observable behavior]
+Current evidence: [baseline]
+Practice: [challenging, repeatable exercise]
+Feedback source: [qualified person or observable result]
+Frequency and cost cap: [sustainable cadence]
+Progress evidence: [behavior or output]
+Review date: [date]
+Adjustment rule: [continue, increase, redesign, or stop]
+```
+
+Practice must be narrow enough to receive feedback. For leadership behavior, observers should be able to describe what changed. For technical or job-search capability, prefer authentic work samples and market feedback.
+
+## 10. Promotion evidence map
 
 Translate “I want a promotion” into evidence expected at the next level:
 
@@ -87,7 +139,7 @@ Translate “I want a promotion” into evidence expected at the next level:
 
 Do not assume excellent execution alone creates promotion. Visibility, sponsorship, organizational need, and timing may matter; state that candidly.
 
-## 7. Offer and company diligence
+## 11. Offer and company diligence
 
 Before recommending an Offer, gather evidence about:
 
@@ -100,7 +152,7 @@ Before recommending an Offer, gather evidence about:
 
 Treat interview impressions as evidence of limited quality. Seek behavioral examples and independent signals.
 
-## 8. Recommendation confidence
+## 12. Recommendation confidence
 
 Label confidence when stakes are high:
 

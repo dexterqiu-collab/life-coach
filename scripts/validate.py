@@ -48,6 +48,8 @@ def validate() -> list[str]:
     require(set(frontmatter) <= ALLOWED_CODEX_KEYS, "Codex SKILL.md contains unsupported frontmatter keys")
     require(len(SKILL_MD.read_text(encoding="utf-8").splitlines()) < 500, "SKILL.md must stay under 500 lines")
     require("[TODO:" not in body, "SKILL.md contains an unfinished TODO")
+    for phrase in ("Marshall Goldsmith", "Five-stage coaching arc", "accountability", "Treat these as practical lenses"):
+        require(phrase in body, f"Canonical skill is missing elite-system invariant: {phrase}")
     checks.append("Codex SKILL.md frontmatter and size")
 
     links = re.findall(r"\[[^]]+\]\(([^)]+\.md)\)", body)
@@ -76,7 +78,7 @@ def validate() -> list[str]:
     checks.append("WorkBuddy/CodeBuddy plugin and Agent metadata")
 
     doubao = (ROOT / "platforms" / "doubao" / "SYSTEM_PROMPT.md").read_text(encoding="utf-8")
-    for phrase in ("一次最多问三个", "可回退", "不虚构研究", "自伤、自杀"):
+    for phrase in ("一次最多问三个", "可回退", "不虚构研究", "自伤、自杀", "七个核心模型", "五阶段教练流程"):
         require(phrase in doubao, f"Doubao prompt is missing shared invariant: {phrase}")
     checks.append("Doubao standalone prompt invariants")
 

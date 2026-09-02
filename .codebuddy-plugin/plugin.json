@@ -1,7 +1,7 @@
 {
   "name": "career-coach",
-  "version": "2.0.0",
-  "description": "A pragmatic career coaching agent for direction, transitions, promotion, job decisions, leadership, and sustainable performance.",
+  "version": "2.1.0",
+  "description": "An elite, evidence-aware career coaching agent for decisions, leadership, sustainable performance, and accountable behavior change.",
   "author": {
     "name": "Dexter"
   },
@@ -13,6 +13,8 @@
     "career-planning",
     "job-transition",
     "promotion",
-    "leadership"
+    "leadership",
+    "behavior-change",
+    "executive-coaching"
   ]
 }

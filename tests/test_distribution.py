@@ -37,7 +37,7 @@ class DistributionTests(unittest.TestCase):
         self.assertNotIn("skills/career-coach/agents/openai.yaml", names)
         with zipfile.ZipFile(archive_path) as archive:
             skill_text = archive.read("skills/career-coach/SKILL.md").decode("utf-8")
-        for field in ("description_zh:", "description_en:", "version: 2.0.0", "author: Dexter"):
+        for field in ("description_zh:", "description_en:", "version: 2.1.0", "author: Dexter"):
             self.assertIn(field, skill_text)
 
     def test_workbuddy_agent_archive_contains_agent_and_skill(self) -> None:
@@ -47,9 +47,38 @@ class DistributionTests(unittest.TestCase):
         self.assertIn("skills/career-coach/SKILL.md", names)
         self.assertIn("LICENSE", names)
 
+    def test_elite_system_is_preserved_across_platforms(self) -> None:
+        canonical = (ROOT / "skills" / "career-coach" / "SKILL.md").read_text(encoding="utf-8")
+        playbook = (ROOT / "skills" / "career-coach" / "references" / "coaching-playbook.md").read_text(
+            encoding="utf-8"
+        )
+        doubao = (ROOT / "platforms" / "doubao" / "SYSTEM_PROMPT.md").read_text(encoding="utf-8")
+
+        for phrase in (
+            "Marshall Goldsmith",
+            "Brendon Burchard",
+            "Bill Campbell",
+            "Tony Robbins",
+            "Robin Sharma",
+            "Five-stage coaching arc",
+        ):
+            self.assertIn(phrase, canonical)
+        for model in (
+            "Feedforward growth",
+            "State–action loop",
+            "Trust–candor–humanity triangle",
+            "Protected-focus moat",
+            "Belief–evidence distinction",
+            "Five-stage transformation",
+            "Deliberate practice and accountability",
+        ):
+            self.assertIn(model, playbook)
+        for phrase in ("前馈式成长", "状态—行动闭环", "信任—坦诚—人文三角", "五阶段教练流程"):
+            self.assertIn(phrase, doubao)
+
     def test_manifest_and_checksums_cover_every_artifact(self) -> None:
         manifest = json.loads((DIST / "manifest.json").read_text(encoding="utf-8"))
-        self.assertEqual("2.0.0", manifest["version"])
+        self.assertEqual("2.1.0", manifest["version"])
         checksum_lines = (DIST / "SHA256SUMS").read_text(encoding="utf-8").splitlines()
         checksums = {line.split("  ", 1)[1]: line.split("  ", 1)[0] for line in checksum_lines}
         expected = set(manifest["artifacts"]) | {"manifest.json"}

@@ -73,7 +73,7 @@ GitHub Skill installation is not available. Open the following document and copy
 https://raw.githubusercontent.com/dexterqiu-collab/life-coach/main/platforms/doubao/SYSTEM_PROMPT.md
 ```
 
-Use the display name `清醒职业教练` and the opening message provided in `platforms/doubao/README.md`.
+Use the display name `精英职业教练` and the opening message provided in `platforms/doubao/README.md`.
 
 ## Verification prompt
 

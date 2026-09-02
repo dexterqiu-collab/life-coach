@@ -1,6 +1,20 @@
-# Career coaching templates
+# Elite career coaching templates
 
 Adapt one relevant template. Do not make the user fill every template.
+
+## Coaching contract
+
+```markdown
+# Coaching focus — [date]
+
+- Topic:
+- Useful outcome for this conversation:
+- Mode wanted: explore / judgment / plan
+- Decision deadline:
+- User retains authority over:
+- Important boundary or constraint:
+- Evidence that this conversation helped:
+```
 
 ## Career context snapshot
 
@@ -63,6 +77,47 @@ Adapt one relevant template. Do not make the user fill every template.
 - Review date:
 ```
 
+## Feedforward request
+
+```markdown
+我正在改进[具体行为/结果]。为了让我下一次做得更好，你建议我改变哪一到两件具体的事？
+
+我会先听和记录，不要求你评价我的人格，也不需要重新讨论过去。两周后，我想再请你告诉我是否观察到了变化。
+```
+
+## Observable behavior-change plan
+
+```markdown
+# Behavior change — [behavior]
+
+- Desired outcome:
+- Behavior to stop/reduce:
+- Replacement behavior:
+- Situations that trigger the old pattern:
+- Two feedforward suggestions collected:
+- Practice opportunity:
+- People who can observe the change:
+- Evidence of progress:
+- Likely obstacle and response:
+- Review date:
+```
+
+## Deliberate-practice plan
+
+```markdown
+# Practice plan — [capability]
+
+- Specific subskill:
+- Current baseline evidence:
+- Repeated practice:
+- Difficulty level / cost cap:
+- Feedback source and timing:
+- Protected practice window:
+- Progress evidence:
+- Adjustment rule:
+- Review date:
+```
+
 ## 30/60/90-day plan
 
 ```markdown
@@ -118,6 +173,8 @@ Adapt one relevant template. Do not make the user fill every template.
 - One adjustment:
 - Next week's single highest-leverage action:
 - Deadline and accountability:
+- Likely obstacle and planned response:
+- Next review date:
 ```
 
 ## Concise coaching response

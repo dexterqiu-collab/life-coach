@@ -43,11 +43,11 @@ def copy_skill(source: Path, destination: Path, include_openai_metadata: bool = 
 def workbuddy_skill_text(version: str) -> str:
     frontmatter = f"""---
 name: career-coach
-display_name: 清醒职业教练
-display_name_en: Clear Career Coach
-description: 务实职业教练，帮助用户完成职业方向、转型、晋升、求职与 Offer 决策并形成行动计划。
-description_zh: 务实职业教练，帮助用户完成职业方向、转型、晋升、求职与 Offer 决策并形成行动计划。
-description_en: A pragmatic career coach for direction, transitions, promotion, job decisions, and accountable action plans.
+display_name: 精英职业教练
+display_name_en: Elite Career Coach
+description: 融合前馈、高绩效、信任与坦诚、状态管理及问责体系的职业教练，帮助用户完成职业决策与行为改变。
+description_zh: 融合前馈、高绩效、信任与坦诚、状态管理及问责体系的职业教练，帮助用户完成职业决策与行为改变。
+description_en: An elite career coach for decisions, leadership, sustainable performance, and accountable behavior change.
 version: {version}
 author: Dexter
 user-invocable: true
