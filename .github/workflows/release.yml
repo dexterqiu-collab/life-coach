@@ -2,8 +2,8 @@ name: Release agent packages
 
 on:
   push:
-    tags:
-      - "v*"
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -21,13 +21,22 @@ jobs:
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: >-
-          gh release create "$GITHUB_REF_NAME"
-          dist/career-coach-codex.zip
-          dist/career-coach-workbuddy-skill.zip
-          dist/career-coach-workbuddy-agent.zip
-          dist/career-coach-doubao.md
-          dist/manifest.json
-          dist/SHA256SUMS
-          --verify-tag
-          --generate-notes
+        run: |
+          tag="v$(python3 -c 'import json; print(json.load(open("dist/manifest.json"))["version"])')"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "Release $tag already exists; leaving it unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag "$tag" "$GITHUB_SHA"
+          git push origin "$tag"
+          gh release create "$tag" \
+            dist/career-coach-codex.zip \
+            dist/career-coach-workbuddy-skill.zip \
+            dist/career-coach-workbuddy-agent.zip \
+            dist/career-coach-doubao.md \
+            dist/manifest.json \
+            dist/SHA256SUMS \
+            --verify-tag \
+            --generate-notes

@@ -102,7 +102,7 @@ python3 scripts/build_packages.py
 python3 -m unittest discover -s tests -v
 ```
 
-创建 `v*` 标签后，GitHub Actions 会构建 Codex、WorkBuddy Skill、WorkBuddy Agent 和豆包四种发布产物，并生成 SHA-256 校验文件。
+提升 `SKILL.md` 中的语义化版本并推送到 `main` 后，GitHub Actions 会在该版本首次出现时自动打标签，构建 Codex、WorkBuddy Skill、WorkBuddy Agent 和豆包四种发布产物，并生成 SHA-256 校验文件。
 
 ## License
 
