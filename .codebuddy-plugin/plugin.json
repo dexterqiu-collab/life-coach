@@ -1,0 +1,18 @@
+{
+  "name": "career-coach",
+  "version": "2.0.0",
+  "description": "A pragmatic career coaching agent for direction, transitions, promotion, job decisions, leadership, and sustainable performance.",
+  "author": {
+    "name": "Dexter"
+  },
+  "homepage": "https://github.com/dexterqiu-collab/life-coach",
+  "repository": "https://github.com/dexterqiu-collab/life-coach",
+  "license": "MIT",
+  "keywords": [
+    "career-coaching",
+    "career-planning",
+    "job-transition",
+    "promotion",
+    "leadership"
+  ]
+}
