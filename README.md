@@ -14,7 +14,7 @@
 阅读 https://life-coach-agent.dexter797.chatgpt.site/install.txt，帮我安装 Life Coach 插件，并创建一个新的职业教练任务。
 ```
 
-智能体会读取机器可读安装协议，添加 `dexter-coaching` marketplace、安装 `life-coach` 插件、验证 `career-coach` Skill，并在新任务里开始第一次教练对话。
+智能体会读取机器可读安装协议，添加 `dexter-coaching` marketplace、安装 `life-coach` 插件、验证 `career-coach` Skill，并在新任务里开始第一次教练对话。若当前网络无法完成 Git clone，协议也提供 GitHub 官方源码压缩包降级路径。
 
 仓库同时保留一个跨平台安装协议，供 WorkBuddy 等智能体使用：
 

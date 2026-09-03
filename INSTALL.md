@@ -35,6 +35,20 @@ Prefer the Codex plugin form because it gives the user an installable, named pro
 <BUNDLED_CODEX> plugin add life-coach@dexter-coaching --json
 ```
 
+If the Git marketplace command fails specifically because this computer cannot connect to `github.com` for Git clone, use the official repository archive as a network fallback:
+
+```text
+https://codeload.github.com/dexterqiu-collab/life-coach/zip/refs/heads/main
+```
+
+Download and extract it into a persistent user-owned directory, not a temporary directory. Preserve or safely replace any earlier snapshot, then add the extracted repository root as a local marketplace:
+
+```text
+<BUNDLED_CODEX> plugin marketplace add <ABSOLUTE_EXTRACTED_REPOSITORY_PATH> --json
+```
+
+Continue with the same list, install, and verification steps. Do not use an untrusted proxy or claim that the Git transport worked when the archive fallback was used.
+
 6. Verify the resulting JSON shows `life-coach` as installed and enabled, and confirm the installed plugin exposes the `career-coach` Skill. Do not claim success from command exit alone.
 7. Start a new task in the same project when possible, because newly installed skills may not appear in the current task. Put this exact user-visible prompt in the new task:
 
