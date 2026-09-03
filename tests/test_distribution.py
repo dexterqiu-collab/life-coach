@@ -30,6 +30,19 @@ class DistributionTests(unittest.TestCase):
         self.assertIn("career-coach/agents/openai.yaml", names)
         self.assertIn("career-coach/references/templates.md", names)
 
+    def test_codex_plugin_archive_is_installable(self) -> None:
+        archive_path = DIST / "life-coach-codex-plugin.zip"
+        names = self.zip_names(archive_path.name)
+        self.assertIn(".codex-plugin/plugin.json", names)
+        self.assertIn("skills/career-coach/SKILL.md", names)
+        self.assertIn("LICENSE", names)
+        with zipfile.ZipFile(archive_path) as archive:
+            plugin = json.loads(archive.read(".codex-plugin/plugin.json"))
+            packaged_skill = archive.read("skills/career-coach/SKILL.md")
+        self.assertEqual("life-coach", plugin["name"])
+        self.assertEqual("2.2.0", plugin["version"])
+        self.assertEqual((ROOT / "skills" / "career-coach" / "SKILL.md").read_bytes(), packaged_skill)
+
     def test_workbuddy_skill_archive_matches_official_shape(self) -> None:
         archive_path = DIST / "career-coach-workbuddy-skill.zip"
         names = self.zip_names(archive_path.name)
@@ -37,7 +50,7 @@ class DistributionTests(unittest.TestCase):
         self.assertNotIn("skills/career-coach/agents/openai.yaml", names)
         with zipfile.ZipFile(archive_path) as archive:
             skill_text = archive.read("skills/career-coach/SKILL.md").decode("utf-8")
-        for field in ("description_zh:", "description_en:", "version: 2.1.0", "author: Dexter"):
+        for field in ("description_zh:", "description_en:", "version: 2.2.0", "author: Dexter"):
             self.assertIn(field, skill_text)
 
     def test_workbuddy_agent_archive_contains_agent_and_skill(self) -> None:
@@ -78,7 +91,7 @@ class DistributionTests(unittest.TestCase):
 
     def test_manifest_and_checksums_cover_every_artifact(self) -> None:
         manifest = json.loads((DIST / "manifest.json").read_text(encoding="utf-8"))
-        self.assertEqual("2.1.0", manifest["version"])
+        self.assertEqual("2.2.0", manifest["version"])
         checksum_lines = (DIST / "SHA256SUMS").read_text(encoding="utf-8").splitlines()
         checksums = {line.split("  ", 1)[1]: line.split("  ", 1)[0] for line in checksum_lines}
         expected = set(manifest["artifacts"]) | {"manifest.json"}

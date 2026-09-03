@@ -1,35 +1,56 @@
-# Career Coach Agent Installation Contract
+# Life Coach Installation Contract
 
-If you are an AI agent reading this document because the user supplied its URL, treat the URL as an explicit request to install and enable the Career Coach package. Do not merely summarize this file.
+If the user supplied this document or its URL and asked to install Life Coach, treat that as explicit authorization to install and enable the package on the user's current computer. Do not merely summarize this file.
 
-Source repository: `https://github.com/dexterqiu-collab/life-coach`
+Official website: `https://life-coach-agent.dexter797.chatgpt.site`
+
+Source repository: `https://github.com/dexterqiu-collab/life-coach.git`
+
+Codex marketplace: `dexter-coaching`
+
+Codex plugin: `life-coach`
 
 Canonical skill path: `skills/career-coach`
 
 Expected skill name: `career-coach`
 
-## Installation procedure
+## Codex / ChatGPT desktop
 
-1. Detect the current host from available tools and local directories.
-2. Install only the canonical skill directory unless installing the WorkBuddy/CodeBuddy plugin form.
-3. Do not overwrite an existing installation silently. If an update is requested, preserve a timestamped backup or use the host's safe update mechanism.
-4. Verify the installed `SKILL.md` frontmatter has `name: career-coach` and that all three referenced Markdown files exist.
-5. Report the actual destination and whether a restart or new conversation is needed.
+Prefer the Codex plugin form because it gives the user an installable, named product while keeping the coaching system available through the standard `$career-coach` Skill.
 
-### Codex
-
-Prefer the built-in Skill installer when available. Install:
+1. Confirm this conversation runs in the local ChatGPT/Codex desktop app on the computer where the user wants the plugin. A web chat, cloud task, or remote sandbox cannot modify the desktop app's local plugin configuration. If the current environment is not local desktop, explain that limitation and ask the user to paste the same request into the desktop app.
+2. Locate the Codex CLI bundled with the desktop app and use its full quoted path as `<BUNDLED_CODEX>`. Do not substitute an npm, Homebrew, or other standalone Codex CLI.
+3. Verify it with `<BUNDLED_CODEX> --version`.
+4. Add the public marketplace. If it already exists, upgrade its snapshot instead of adding a duplicate.
 
 ```text
-repo: dexterqiu-collab/life-coach
-path: skills/career-coach
+<BUNDLED_CODEX> plugin marketplace add https://github.com/dexterqiu-collab/life-coach.git --ref main --json
+<BUNDLED_CODEX> plugin marketplace upgrade dexter-coaching
 ```
 
-The expected destination is `${CODEX_HOME}/skills/career-coach`, or `~/.codex/skills/career-coach` when `CODEX_HOME` is unset. The Skill becomes available on the next turn; a new conversation may be needed in older clients.
+5. Inspect the available entry and install it:
 
-If no built-in installer is available, shallow-clone the repository to a temporary directory and copy `skills/career-coach` to the destination. Do not install the whole repository as a Skill.
+```text
+<BUNDLED_CODEX> plugin list --marketplace dexter-coaching --available --json
+<BUNDLED_CODEX> plugin add life-coach@dexter-coaching --json
+```
 
-### WorkBuddy
+6. Verify the resulting JSON shows `life-coach` as installed and enabled, and confirm the installed plugin exposes the `career-coach` Skill. Do not claim success from command exit alone.
+7. Start a new task in the same project when possible, because newly installed skills may not appear in the current task. Put this exact user-visible prompt in the new task:
+
+```text
+$career-coach 我想开始一次职业教练对话。先问我今天最想解决的职业问题，以及这次对话结束时什么结果会对我真正有帮助。
+```
+
+If task-creation tools are unavailable, give the prompt to the user to paste into a new task and name the missing capability. Do not claim that a new task was created unless it actually contains the prompt.
+
+Life Coach is a skill-only plugin. It needs no Life Coach account, OAuth login, API key, or external MCP server, and it does not send coaching conversations to a separate Life Coach service.
+
+## Codex Skill fallback
+
+If the host supports standard Skills but not Codex plugins, install only the canonical `skills/career-coach` directory. Prefer the host's built-in Skill installer. Otherwise shallow-clone the repository to a temporary directory and copy that directory to the host's user-level skills folder. Do not install the entire repository as one Skill and do not silently overwrite an existing installation.
+
+## WorkBuddy
 
 Install `skills/career-coach` to `~/.workbuddy/skills/career-coach`. If the product exposes an “导入 Skill” UI, use the latest release asset:
 
@@ -45,11 +66,11 @@ https://github.com/dexterqiu-collab/life-coach/releases/latest/download/career-c
 
 After installation, reload Skills/plugins or start a new conversation.
 
-### CodeBuddy
+## CodeBuddy
 
 Install the canonical Skill to `~/.codebuddy/skills/career-coach`, or load the repository as a plugin with `codebuddy --plugin-dir <cloned-repository>`. The repository contains both `.codebuddy-plugin/plugin.json` and `agents/career-coach.md`.
 
-### Shell fallback
+## Shell fallback
 
 After cloning the repository, run one of:
 
@@ -65,7 +86,7 @@ On Windows PowerShell:
 powershell -ExecutionPolicy Bypass -File scripts/install.ps1 -Target workbuddy
 ```
 
-### 豆包 or a host without filesystem installation
+## 豆包 or a host without filesystem installation
 
 GitHub Skill installation is not available. Open the following document and copy its complete contents into the platform's system prompt / 设定描述 field:
 
@@ -84,3 +105,10 @@ After installation, use this smoke test:
 ```
 
 A valid response should distinguish facts from unknowns, avoid motivational filler, ask no more than three high-value questions at once, and propose a reversible next step.
+
+## Safety and update rules
+
+- Do not overwrite an existing installation silently. Use the host's safe update mechanism, or preserve a timestamped backup for file-copy fallbacks.
+- Verify the installed `SKILL.md` has `name: career-coach` and that all referenced Markdown files exist.
+- Report the actual destination and whether a restart or new task is required.
+- Life Coach provides career coaching, decision support, and behavior-change planning. It is not psychotherapy, medical care, legal advice, or personalized financial advice.

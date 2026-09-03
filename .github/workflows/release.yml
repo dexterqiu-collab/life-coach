@@ -32,6 +32,7 @@ jobs:
           git tag "$tag" "$GITHUB_SHA"
           git push origin "$tag"
           gh release create "$tag" \
+            dist/life-coach-codex-plugin.zip \
             dist/career-coach-codex.zip \
             dist/career-coach-workbuddy-skill.zip \
             dist/career-coach-workbuddy-agent.zip \

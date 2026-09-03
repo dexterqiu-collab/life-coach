@@ -1,0 +1,6 @@
+interface:
+  display_name: "精英职业教练"
+  short_description: "职业方向与决策、领导力发展、高绩效和行为改变教练"
+  default_prompt: "Use $career-coach to coach me through this career challenge, surface the key insight, and define an accountable next action."
+policy:
+  allow_implicit_invocation: true

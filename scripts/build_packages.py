@@ -83,6 +83,13 @@ def build() -> list[Path]:
     staging = DIST / ".staging"
     staging.mkdir()
 
+    codex_plugin_stage = staging / "codex-plugin"
+    shutil.copytree(ROOT / "plugins" / "life-coach" / ".codex-plugin", codex_plugin_stage / ".codex-plugin")
+    copy_skill(CANONICAL_SKILL, codex_plugin_stage / "skills" / "career-coach")
+    shutil.copy2(ROOT / "LICENSE", codex_plugin_stage / "LICENSE")
+    codex_plugin_zip = DIST / "life-coach-codex-plugin.zip"
+    zip_tree(codex_plugin_stage, codex_plugin_zip)
+
     codex_stage = staging / "codex" / "career-coach"
     copy_skill(CANONICAL_SKILL, codex_stage)
     codex_zip = DIST / "career-coach-codex.zip"
@@ -113,6 +120,7 @@ def build() -> list[Path]:
         "version": version,
         "source": "https://github.com/dexterqiu-collab/life-coach",
         "artifacts": [
+            codex_plugin_zip.name,
             codex_zip.name,
             workbuddy_skill_zip.name,
             workbuddy_agent_zip.name,
@@ -122,7 +130,7 @@ def build() -> list[Path]:
     manifest_path = DIST / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    artifacts = [codex_zip, workbuddy_skill_zip, workbuddy_agent_zip, doubao_prompt, manifest_path]
+    artifacts = [codex_plugin_zip, codex_zip, workbuddy_skill_zip, workbuddy_agent_zip, doubao_prompt, manifest_path]
     checksums = DIST / "SHA256SUMS"
     checksums.write_text(
         "".join(f"{sha256(path)}  {path.name}\n" for path in artifacts), encoding="utf-8"

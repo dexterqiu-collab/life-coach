@@ -12,6 +12,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKILL_DIR = ROOT / "skills" / "career-coach"
 SKILL_MD = SKILL_DIR / "SKILL.md"
+CODEX_PLUGIN_DIR = ROOT / "plugins" / "life-coach"
+CODEX_PLUGIN_MANIFEST = CODEX_PLUGIN_DIR / ".codex-plugin" / "plugin.json"
+MARKETPLACE_MANIFEST = ROOT / ".agents" / "plugins" / "marketplace.json"
 ALLOWED_CODEX_KEYS = {"name", "description", "license", "allowed-tools", "metadata"}
 
 
@@ -76,6 +79,29 @@ def validate() -> list[str]:
     agent_text = (ROOT / "agents" / "career-coach.md").read_text(encoding="utf-8")
     require("skills: career-coach" in agent_text, "WorkBuddy agent must auto-load the canonical skill")
     checks.append("WorkBuddy/CodeBuddy plugin and Agent metadata")
+
+    codex_plugin = json.loads(CODEX_PLUGIN_MANIFEST.read_text(encoding="utf-8"))
+    require(codex_plugin.get("name") == "life-coach", "Codex plugin name mismatch")
+    require(codex_plugin.get("version") == skill_version, "Codex plugin version mismatch")
+    require(codex_plugin.get("skills") == "./skills/", "Codex plugin must load its packaged skills")
+    require(codex_plugin.get("interface", {}).get("displayName") == "Life Coach", "Codex display name mismatch")
+    require(len(codex_plugin.get("interface", {}).get("defaultPrompt", [])) <= 3,
+            "Codex plugin may expose at most three default prompts")
+
+    packaged_skill = CODEX_PLUGIN_DIR / "skills" / "career-coach"
+    canonical_files = {path.relative_to(SKILL_DIR) for path in SKILL_DIR.rglob("*") if path.is_file()}
+    packaged_files = {path.relative_to(packaged_skill) for path in packaged_skill.rglob("*") if path.is_file()}
+    require(packaged_files == canonical_files, "Codex plugin skill file set is out of sync")
+    for relative_path in canonical_files:
+        require((SKILL_DIR / relative_path).read_bytes() == (packaged_skill / relative_path).read_bytes(),
+                f"Codex plugin skill is out of sync: {relative_path}")
+
+    marketplace = json.loads(MARKETPLACE_MANIFEST.read_text(encoding="utf-8"))
+    entries = {entry.get("name"): entry for entry in marketplace.get("plugins", [])}
+    require(marketplace.get("name") == "dexter-coaching", "Marketplace name mismatch")
+    require(entries.get("life-coach", {}).get("source", {}).get("path") == "./plugins/life-coach",
+            "Marketplace must point to the Life Coach plugin")
+    checks.append("Codex plugin, marketplace, and canonical skill parity")
 
     doubao = (ROOT / "platforms" / "doubao" / "SYSTEM_PROMPT.md").read_text(encoding="utf-8")
     for phrase in ("一次最多问三个", "可回退", "不虚构研究", "自伤、自杀", "七个核心模型", "五阶段教练流程"):

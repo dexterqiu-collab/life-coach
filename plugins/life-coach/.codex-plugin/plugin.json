@@ -1,0 +1,38 @@
+{
+  "name": "life-coach",
+  "version": "2.2.0",
+  "description": "An evidence-aware AI career coach for decisions, leadership, sustainable performance, and accountable behavior change.",
+  "author": {
+    "name": "Dexter",
+    "url": "https://github.com/dexterqiu-collab"
+  },
+  "homepage": "https://life-coach-agent.dexter797.chatgpt.site",
+  "repository": "https://github.com/dexterqiu-collab/life-coach.git",
+  "license": "MIT",
+  "keywords": [
+    "life-coach",
+    "career-coach",
+    "career-planning",
+    "decision-making",
+    "leadership",
+    "behavior-change",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Life Coach",
+    "shortDescription": "Turn career uncertainty into evidence and accountable action",
+    "longDescription": "An elite career coaching system for career direction, transitions, promotion, Offer decisions, leadership, conflict, sustainable performance, and behavior change. It combines a five-stage coaching arc with seven practical models, evidence-aware recommendations, reversible experiments, and clear professional boundaries.",
+    "developerName": "Dexter",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Research", "Planning"],
+    "websiteURL": "https://life-coach-agent.dexter797.chatgpt.site",
+    "privacyPolicyURL": "https://life-coach-agent.dexter797.chatgpt.site/privacy",
+    "defaultPrompt": [
+      "Help me decide whether to change teams, companies, or careers.",
+      "Compare these two Offers and give me a clear recommendation.",
+      "Build an evidence-based promotion plan for the next six months."
+    ],
+    "brandColor": "#3157FF"
+  }
+}

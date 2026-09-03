@@ -4,7 +4,19 @@
 
 它保留原系统的五位教练方法论、七个核心模型、五阶段会谈、表达 DNA、行动问责和安全边界，同时加入职业决策、事实核验与可逆实验。它不靠鸡血，也不会只用问题把决定重新推给你。
 
-## 复制一个链接，交给智能体安装
+**官网与一键安装：** [life-coach-agent.dexter797.chatgpt.site](https://life-coach-agent.dexter797.chatgpt.site)
+
+## 复制一句话，交给智能体安装
+
+打开官网，复制首页的安装指令；也可以直接复制这一句到 **Codex / ChatGPT 桌面端**：
+
+```text
+阅读 https://life-coach-agent.dexter797.chatgpt.site/install.txt，帮我安装 Life Coach 插件，并创建一个新的职业教练任务。
+```
+
+智能体会读取机器可读安装协议，添加 `dexter-coaching` marketplace、安装 `life-coach` 插件、验证 `career-coach` Skill，并在新任务里开始第一次教练对话。
+
+仓库同时保留一个跨平台安装协议，供 WorkBuddy 等智能体使用：
 
 把下面这条链接直接发给 **Codex 或 WorkBuddy**。链接本身是一份机器可读的安装说明，接收它的智能体会识别当前平台、安装并验证：
 
@@ -18,7 +30,8 @@ https://raw.githubusercontent.com/dexterqiu-collab/life-coach/main/INSTALL.md
 
 | 平台 | 推荐入口 | 部署结果 |
 |---|---|---|
-| Codex | [直接安装 Skill](https://github.com/dexterqiu-collab/life-coach/tree/main/skills/career-coach) | 用户级 `career-coach` Skill，可自动触发或用 `$career-coach` 调用 |
+| Codex / ChatGPT 桌面端 | [官网一键安装](https://life-coach-agent.dexter797.chatgpt.site) | `life-coach` 插件，内含可自动触发或用 `$career-coach` 调用的 Skill |
+| Codex Skill 兼容模式 | [直接导入 Skill](https://github.com/dexterqiu-collab/life-coach/tree/main/skills/career-coach) | 用户级 `career-coach` Skill |
 | WorkBuddy | 将上面的 `INSTALL.md` 链接发给 WorkBuddy；也可下载 Release 中的 `career-coach-workbuddy-skill.zip` | 用户级 Skill |
 | WorkBuddy / CodeBuddy 独立智能体 | 下载 Release 中的 `career-coach-workbuddy-agent.zip` | 可在 Agent/专家列表中选择的职业教练角色，同时携带 Skill |
 | 豆包 | 打开 [豆包系统提示词](https://raw.githubusercontent.com/dexterqiu-collab/life-coach/main/platforms/doubao/SYSTEM_PROMPT.md)，全选复制到“创建智能体 → 设定描述” | 独立“精英职业教练”智能体 |
@@ -88,7 +101,11 @@ powershell -ExecutionPolicy Bypass -File scripts/install.ps1 -Target auto
 
 ```text
 life-coach/
+├── .agents/plugins/marketplace.json   # Codex marketplace 入口
 ├── INSTALL.md                         # 发给智能体的机器可读安装入口
+├── plugins/life-coach/                # 可由 Codex 安装的正式插件
+│   ├── .codex-plugin/plugin.json
+│   └── skills/career-coach/
 ├── skills/career-coach/               # Codex / Agent Skills 标准包
 │   ├── SKILL.md
 │   ├── agents/openai.yaml
@@ -117,7 +134,7 @@ python3 scripts/build_packages.py
 python3 -m unittest discover -s tests -v
 ```
 
-提升 `SKILL.md` 中的语义化版本并推送到 `main` 后，GitHub Actions 会在该版本首次出现时自动打标签，构建 Codex、WorkBuddy Skill、WorkBuddy Agent 和豆包四种发布产物，并生成 SHA-256 校验文件。
+提升 `SKILL.md` 中的语义化版本并推送到 `main` 后，GitHub Actions 会在该版本首次出现时自动打标签，构建 Codex 插件、Codex Skill、WorkBuddy Skill、WorkBuddy Agent 和豆包五类发布产物，并生成 SHA-256 校验文件。
 
 ## License
 
